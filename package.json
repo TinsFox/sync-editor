@@ -2,7 +2,7 @@
   "name": "sync-editor",
   "displayName": "sync-editor",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -10,6 +10,9 @@
     "Other"
   ],
   "activationEvents": [],
+  "exclude": [
+    "bun.lockb"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -34,6 +37,7 @@
       }
     }
   },
+  "license": "MIT",
   "scripts": {
     "vscode:prepublish": "pnpm run package",
     "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
