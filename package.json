@@ -1,10 +1,10 @@
 {
   "name": "sync-editor",
-  "displayName": "sync-editor",
+  "displayName": "Sync Editor",
   "description": "",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "engines": {
-    "vscode": "^1.95.0"
+    "vscode": "^1.90.0"
   },
   "repository": {
     "type": "git",
@@ -21,25 +21,18 @@
   "contributes": {
     "commands": [
       {
-        "command": "sync-editor.openInCli",
+        "command": "sync-editor.openInVSCode",
         "title": "open in vscode"
+      },
+      {
+        "command": "sync-editor.openInCursor",
+        "title": "open in cursor"
+      },
+      {
+        "command": "sync-editor.openInWindsur",
+        "title": "open in windsur"
       }
-    ],
-    "configuration": {
-      "title": "Sync Editor",
-      "properties": {
-        "sync-editor.cliCommand": {
-          "type": "string",
-          "default": "cursor",
-          "enum": [
-            "cursor",
-            "code",
-            "windsur"
-          ],
-          "description": "选择要使用的命令行工具 (cursor 或 code)"
-        }
-      }
-    }
+    ]
   },
   "license": "MIT",
   "scripts": {
@@ -60,7 +53,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
-    "@types/vscode": "^1.95.0",
+    "@types/vscode": "^1.90.0",
     "@typescript-eslint/eslint-plugin": "^8.15.0",
     "@typescript-eslint/parser": "^8.15.0",
     "@vscode/test-cli": "^0.0.10",
@@ -69,5 +62,6 @@
     "eslint": "^9.15.0",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.7.2"
-  }
+  },
+  "icon": "resources/logo.png"
 }

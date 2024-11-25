@@ -22,22 +22,9 @@ Sync Editor 是一个 VS Code 扩展，它允许你在不同的编辑器之间�
 
 1. 在 VS Code 中打开一个文件
 2. 使用以下方式之一触发命令：
-   - 按下 `Ctrl/Cmd + Shift + P`，输入 "open in vscode"
-   - 在右键菜单中选择 "open in vscode"
-
-## 配置选项
-
-在 VS Code 设置中，你可以配置以下选项：
-
-- `sync-editor.cliCommand`: 选择要使用的命令行工具
-  - `cursor`: 使用 Cursor 编辑器（默认）
-  - `code`: 使用 VS Code
-  - `windsur`: 使用 WindSur 编辑器
-
-配置示例：
-```json
-{
-  "sync-editor.cliCommand": "cursor"
-}
-```
+   - 按下 `Ctrl/Cmd + Shift + P`，输入以下命令之一：
+     - "open in vscode" - 在 VS Code 中打开
+     - "open in cursor" - 在 Cursor 中打开
+     - "open in windsur" - 在 WindSur 中打开
+   - 在右键菜单中选择对应的选项
 
