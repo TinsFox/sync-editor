@@ -16,6 +16,10 @@
       {
         "command": "sync-editor.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "sync-editor.openInCli",
+        "title": "open in vscode"
       }
     ]
   },
