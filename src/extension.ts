@@ -17,6 +17,10 @@ export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand(
 		"sync-editor.openInCli",
 		async () => {
+			// 获取配置的命令
+			const config = vscode.workspace.getConfiguration('sync-editor');
+			const cliCommand = config.get('cliCommand', 'cursor');
+
 			const editor = vscode.window.activeTextEditor;
 
 			if (!editor) {
@@ -42,9 +46,9 @@ export function activate(context: vscode.ExtensionContext) {
 			// 先打开工程，然后打开文件
 			// 使用 Promise 来确保命令按顺序执行
 			try {
-				// 先打开工程
+				// 修改打开工程的命令
 				await new Promise((resolve, reject) => {
-					exec(`cursor "${workspacePath}"`, (error, stdout, stderr) => {
+					exec(`${cliCommand} "${workspacePath}"`, (error, stdout, stderr) => {
 						if (error) {
 							reject(error);
 							return;
@@ -54,10 +58,10 @@ export function activate(context: vscode.ExtensionContext) {
 					});
 				});
 
-				// 直接使用绝对路径打开文件
+				// 修改打开文件的命令
 				await new Promise((resolve, reject) => {
-					const cliCommand = `cursor --goto "${filePath}:${line}:${column}"`;
-					exec(cliCommand, (error, stdout, stderr) => {
+					const openFileCommand = `${cliCommand} --goto "${filePath}:${line}:${column}"`;
+					exec(openFileCommand, (error, stdout, stderr) => {
 						if (error) {
 							reject(error);
 							return;
@@ -67,7 +71,7 @@ export function activate(context: vscode.ExtensionContext) {
 				});
 
 				vscode.window.showInformationMessage(
-					`已在Cursor中打开位置: ${filePath}:${line}:${column}`
+					`已在${cliCommand}中打开位置: ${filePath}:${line}:${column}`
 				);
 			} catch (error) {
 				const errorMessage = error instanceof Error

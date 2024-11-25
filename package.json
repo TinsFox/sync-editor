@@ -21,7 +21,21 @@
         "command": "sync-editor.openInCli",
         "title": "open in vscode"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Sync Editor",
+      "properties": {
+        "sync-editor.cliCommand": {
+          "type": "string",
+          "default": "cursor",
+          "enum": [
+            "cursor",
+            "code"
+          ],
+          "description": "选择要使用的命令行工具 (cursor 或 code)"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
