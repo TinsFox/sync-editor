@@ -26,5 +26,13 @@ Sync Editor 是一个 VS Code 扩展，它允许你在不同的编辑器之间�
      - "open in vscode" - 在 VS Code 中打开
      - "open in cursor" - 在 Cursor 中打开
      - "open in windsur" - 在 WindSur 中打开
+     - "open in webstorm" - 在 WebStorm 中打开
    - 在右键菜单中选择对应的选项
+
+## 要求
+
+- VS Code 版本: ^1.90.0
+- 如果要使用 WebStorm 功能，需要确保：
+  1. WebStorm 已安装
+  2. `webstorm` 命令行工具已添加到系统环境变量中
 

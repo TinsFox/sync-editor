@@ -2,7 +2,7 @@
   "name": "sync-editor",
   "displayName": "Sync Editor",
   "description": "",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -31,6 +31,10 @@
       {
         "command": "sync-editor.openInWindsur",
         "title": "open in windsur"
+      },
+      {
+        "command": "sync-editor.openInWebStorm",
+        "title": "open in webstorm"
       }
     ]
   },
